@@ -1,24 +1,16 @@
-document
-  .getElementById("registrationForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevenir que se envíe el formulario sin realizar la validación
+function showAlertSuccess() {
+  document.getElementById("alert-success").classList.add("show");
+}
 
-    // Elementos definidos
-    let password = document.getElementById("password1").value;
+function showAlertError() {
+  document.getElementById("alert-danger").classList.add("show");
+}
 
+//contraseña  y repetir contraseñas deben coincidir//
 
-    // Validación del campo contraseña y confirmar contraseña
-    if (!password || !confirmPassword) {
-      showAlertError("La contraseña debe ser ingresada.");
-      return;
-    }
+let contraseña = getElementById("password1");
+let repetir = getElementById("password2");
 
-    if (password.length < 6) {
-      showAlertError("La contraseña debe tener al menos 6 caracteres.");
-      return;
-    }
-
-
-function showAlertError(message) {
-  alert(message);
+if (contraseña !== repetir) {
+  return showAlertError()
 }
