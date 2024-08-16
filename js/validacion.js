@@ -1,11 +1,3 @@
-//let repetir = getElementById("password2");
-//let contraseña = document.getElementById("password1");
-
-//contraseña  y repetir contraseñas deben coincidir//
-
-//if (contraseña !== repetir) {
-// return showAlertError();
-//}
 
 //Funciones de alertas
 function showAlertSuccess() {
@@ -19,8 +11,8 @@ function showAlertError() {
 // Contraseña de 6 caracteres o más
 let form = document.getElementById("registrationForm");
 let password = document.getElementById("password1");
-let errorAlert = document.getElementById("alert-danger"); //A CHEQUEAR
-let errorMessage = errorAlert.querySelector("p"); //A CHEQUEAR
+let errorAlert = document.getElementById("alert-danger"); 
+let errorMessage = errorAlert.querySelector("p"); 
 let checkPassword = document.getElementById("password2");
 
 form.addEventListener("submit", function (event) {
@@ -38,12 +30,12 @@ form.addEventListener("submit", function (event) {
     return;
   }
 
-  //Sugerencia de Leti y Flor para las contraseñas que no coinciden
-  //  if (password.value !== checkPassword.value) {
-  //    errorMessage.textContent = "Las contraseñas no coinciden";
-  //    showAlertError();
-  //    return;
-  //  }
+  // contraseñas que no coinciden
+    if (password.value !== checkPassword.value) {
+      errorMessage.textContent;
+      showAlertError();
+     return;
+   }
   showAlertSuccess();
   form.submit();
 });
