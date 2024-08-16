@@ -39,7 +39,9 @@ form.addEventListener("submit", function (event) {
 
    // si el checkbox está marcado
    if (!terms.checked) {
-    alert("Debes aceptar los términos y condiciones del servicio.");
+    errorMessage.textContent =
+    ("Debes aceptar los términos y condiciones del servicio.");
+    showAlertError();
     return;
   }
 
