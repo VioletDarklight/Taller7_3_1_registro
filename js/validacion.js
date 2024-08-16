@@ -36,12 +36,14 @@ form.addEventListener("submit", function (event) {
       showAlertError();
      return;
    }
+
+   // si el checkbox está marcado
+   if (!terms.checked) {
+    alert("Debes aceptar los términos y condiciones del servicio.");
+    return;
+  }
+
   showAlertSuccess();
   form.submit();
 });
 
-// si el checkbox está marcado
-if (!checkbox.checked) {
-  alert("Debes aceptar los términos y condiciones del servicio.");
-  event.preventDefault(); // Previene el envío del formulario
-};
