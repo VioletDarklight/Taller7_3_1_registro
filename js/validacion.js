@@ -16,6 +16,11 @@ let errorMessage = errorAlert.querySelector("p");
 let checkPassword = document.getElementById("password2");
 let terms = document.getElementById("terminos")
 
+//Variables para "Ningun campo puede estar vacío"
+let nombre = document.getElementById("nombre");
+let apellido = document.getElementById("apellido");
+let email = document.getElementById("email");
+
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -40,6 +45,13 @@ form.addEventListener("submit", function (event) {
    if (!terms.checked) {
     errorMessage.textContent =
     ("Debes aceptar los términos y condiciones del servicio.");
+    showAlertError();
+    return;
+  }
+
+  //Ningún campo puede estar vacío
+  if (
+    nombre.value == "" || apellido.value == "" || email.value == "" || password.value == "") {
     showAlertError();
     return;
   }
