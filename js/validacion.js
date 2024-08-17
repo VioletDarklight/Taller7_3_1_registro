@@ -24,7 +24,7 @@ let email = document.getElementById("email");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  document.getElementById("alert-success").classList.remove("show");
+  //document.getElementById("alert-success").classList.remove("show");
   errorAlert.classList.remove("show");
 
   if (password.value.length < 6) {
@@ -36,7 +36,8 @@ form.addEventListener("submit", function (event) {
 
   // contraseñas que no coinciden
     if (password.value !== checkPassword.value) {
-      errorMessage.textContent;
+      errorMessage.textContent =
+        ("Las contraseñas no coinciden.");
       showAlertError();
      return;
    }
@@ -45,18 +46,19 @@ form.addEventListener("submit", function (event) {
    if (!terms.checked) {
     errorMessage.textContent =
     ("Debes aceptar los términos y condiciones del servicio.");
-    showAlertError();
+     showAlertError();
     return;
   }
 
   //Ningún campo puede estar vacío
-  if (
-    nombre.value == "" || apellido.value == "" || email.value == "" || password.value == "") {
+  if (nombre.value == "" || apellido.value == "" || email.value == "" || password.value == "") {
+    errorMessage.textContent =
+      ("Completa todos los campos.");
     showAlertError();
     return;
   }
 
   showAlertSuccess();
-  form.submit();
+  //form.submit();
 });
 
