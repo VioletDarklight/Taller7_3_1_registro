@@ -14,16 +14,15 @@ let password = document.getElementById("password1");
 let errorAlert = document.getElementById("alert-danger"); 
 let errorMessage = errorAlert.querySelector("p"); 
 let checkPassword = document.getElementById("password2");
+let terms = document.getElementById("terminos")
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  let passwordValue = password.value;
-
   document.getElementById("alert-success").classList.remove("show");
   errorAlert.classList.remove("show");
 
-  if (passwordValue.length < 6) {
+  if (password.value.length < 6) {
     errorMessage.textContent =
       "La contraseña debe contener al menos 6 caracteres.";
     showAlertError();
